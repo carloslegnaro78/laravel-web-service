@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Http\Requests\StoreUpdateCategoryFormRequest;
 
 class CateogoryController extends Controller
 {
@@ -28,7 +29,7 @@ class CateogoryController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateCategoryFormRequest $request)
     {
         $category = $this->category->create($request->all());
 
@@ -36,7 +37,7 @@ class CateogoryController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreUpdateCategoryFormRequest $request, $id)
     {
         $category = $this->category->find($id);
 
