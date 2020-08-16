@@ -18,7 +18,6 @@ class CateogoryController extends Controller
         $this->category = $category;
         
     }
-
     
     public function index(Category $category, Request $request)
     {
@@ -35,7 +34,6 @@ class CateogoryController extends Controller
 
         return response()->json($category, 201);
     }
-
 
     public function update(StoreUpdateCategoryFormRequest $request, $id)
     {
@@ -59,6 +57,5 @@ class CateogoryController extends Controller
 
         return response()->json(['sucess' => true], 204);
     }
-
 
 }
