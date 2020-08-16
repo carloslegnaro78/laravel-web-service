@@ -50,4 +50,15 @@ class CateogoryController extends Controller
 
     }
 
+    public function delete($id)
+    {
+        if(!$category = $this->category->find($id))
+            return response()->json(['error' => 'Not found'], 404);
+        
+        $category->delete();
+
+        return response()->json(['sucess' => true], 204);
+    }
+
+
 }
