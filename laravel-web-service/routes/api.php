@@ -1,12 +1,12 @@
 <?php
 
 /*
-$this->get('categories','Api\CateogoryController@index');
-$this->post('categories','Api\CateogoryController@store');
-$this->put('categories/{id}','Api\CateogoryController@update');
-$this->delete('categories/{id}','Api\CateogoryController@delete');
+$this->get('categories','Api\CategoryController@index');
+$this->post('categories','Api\CategoryController@store');
+$this->put('categories/{id}','Api\CategoryController@update');
+$this->delete('categories/{id}','Api\CategoryController@delete');
 */
 
-$this->apiResource('categories','Api\CateogoryController');
+$this->apiResource('categories','Api\CategoryController');
 
 

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Http\Requests\StoreUpdateCategoryFormRequest;
 
-class CateogoryController extends Controller
+class CategoryController extends Controller
 {
     
     private $category;
