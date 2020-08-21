@@ -9,4 +9,4 @@ $this->delete('categories/{id}','Api\CategoryController@delete');
 
 $this->apiResource('categories','Api\CategoryController');
 
-
+$this->apiResource('products', 'Api\ProductController');
