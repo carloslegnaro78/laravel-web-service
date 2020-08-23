@@ -24,7 +24,6 @@ class ProductController extends Controller
         return response()->json($products);
     }
 
-
     public function store(StoreUpdateProductFormRequest $request)
     {
         $product = $this->product->create($request->all());
@@ -32,9 +31,14 @@ class ProductController extends Controller
         return response()->json($product, 201);
     }
 
-
     public function show($id)
     {
+
+        if (!$product = $this->product->find($id))
+        return response()->json(['error' => 'Not Found'], 404);
+
+        return response()->json($product);
+
     }
 
     public function update(StoreUpdateProductFormRequest $request, $id)
