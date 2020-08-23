@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-  
+
     private $product, $totalPage = 10;
 
     public function __construct(Product $product)
@@ -18,7 +18,7 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $products = $this->product->getResults($request->all(),$this->totalPage);
+        $products = $this->product->getResults($request->all(), $this->totalPage);
 
         return response()->json($products);
     }
@@ -31,15 +31,19 @@ class ProductController extends Controller
         return response()->json($product, 201);
     }
 
- 
+
     public function show($id)
     {
-        //
     }
 
     public function update(Request $request, $id)
     {
-        //
+        if (!$product = $this->product->find($id))
+            return response()->json(['error' => 'Not Found'], 404);
+
+        $product->update($request->all());
+
+        return response()->json($product);
     }
 
 
@@ -47,5 +51,4 @@ class ProductController extends Controller
     {
         //
     }
-
 }
